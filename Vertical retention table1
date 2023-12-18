@@ -1,0 +1,16 @@
+CREATE OR REPLACE TABLE all_users AS
+SELECT  go.country,
+        go.order_id,
+        go.application_user_id user_id,
+        go.created_at,
+        DATE_TRUNC('MONTH', CREATED_AT::DATE) AS MONTH,
+        go.gmv_usd
+        , case when ant.executed is not null then 'VERTICAL'  else 'OTRAS'  end as NEW_VERTICAL
+FROM orders_table
+LEFT JOIN   verification_vertical_table as ANT 
+  ON GO.ORDER_ID = ANT.ORDER_ID and go.country = ant.country
+WHERE 1=1
+  and count_to_gmv 
+  and go.order_state not ilike '%cancel%'
+  and MONTH between '2020-01-01' and '2023-03-31'
+;

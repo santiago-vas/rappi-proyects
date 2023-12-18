@@ -1,1 +1,5 @@
-this file show one of most accurate analysis done for AFC in rappi, showing the imporatance of new verticals in the home page and how these impact the total order frequency in rappi in the next 
+this file show one of most accurate analysis done for an specific vertical in a company, showing the importance of new verticals in the home page and how these impact the 
+total order frequency in rappi in the next period of almost 12 months.
+
+the process to get this aalysis consist on a query which cretes differents tables and view, and which are important to get the final result which is written in an excel file.
+
